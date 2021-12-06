@@ -1,0 +1,28 @@
+body {
+  max-width: 768px;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  background-color: #9356DC;
+}
+.header__img {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10px;
+}
+
+.section_informations {
+  width: 100%;
+}
+.section_informations__localisation {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,29 @@
+@import "utils/variables";
+
+body{
+    max-width: 768px;
+    margin:auto;
+}
+
+.header{
+    width: 100%;
+    background-color:$couleur-primaire;
+    &__img{
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 10px;
+    }
+    
+}
+
+.section_informations{
+    width: 100%;
+    &__localisation{
+        display:flex;
+        align-items: baseline;
+        justify-content: center;
+        width: 100%;
+        background-color: red;
+    }
+}
