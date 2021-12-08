@@ -1,6 +1,19 @@
+@font-face {
+  font-family: "shrikhand";
+  src: url("../fonts/shrikhand-regular-webfont.woff2") format("woff2"), url("../fonts/shrikhand-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   max-width: 768px;
   margin: auto;
+  font-family: "roboto";
 }
 
 .header {
@@ -23,6 +36,9 @@ body {
   justify-content: center;
   width: 100%;
   background-color: red;
+}
+.section_informations__restaurants {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

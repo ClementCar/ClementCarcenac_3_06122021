@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "shrikhand";
+  src: url("../fonts/shrikhand-regular-webfont.woff2") format("woff2"), url("../fonts/shrikhand-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  max-width: 768px;
+  margin: auto;
+  font-family: "roboto";
+}
+
+.header {
+  width: 100%;
+  background-color: #9356DC;
+}
+.header__img {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10px;
+}
+
+.section_informations {
+  width: 100%;
+}
+.section_informations__localisation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  background-color: red;
+}
+.section_informations__restaurants {
+  text-align: center;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Nhc3MvbWFpbi5zY3NzIiwiLi4vc3R5bGUuY3NzIiwiLi4vLi4vLi4vc2Fzcy91dGlscy9fdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDSSx3QkFBQTtFQUNBLG1JQUFBO0VBRUEsbUJBQUE7RUFDQSxrQkFBQTtBQ0ZKO0FETUE7RUFDSSxxQkFBQTtFQUNBLDZIQUFBO0VBRUEsbUJBQUE7RUFDQSxrQkFBQTtBQ0xKO0FEU0E7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtBQ1BKOztBRFVBO0VBQ0ksV0FBQTtFQUNBLHlCRTVCZTtBRHFCbkI7QURRSTtFQUNJLFVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUNOUjs7QURXQTtFQUNJLFdBQUE7QUNSSjtBRFNJO0VBQ0ksb0JBQUE7RUFBQSxvQkFBQTtFQUFBLGFBQUE7RUFDQSwyQkFBQTtNQUFBLHdCQUFBO1VBQUEscUJBQUE7RUFDQSx3QkFBQTtNQUFBLHFCQUFBO1VBQUEsdUJBQUE7RUFDQSxXQUFBO0VBQ0EscUJBQUE7QUNQUjtBRFNJO0VBQ0ksa0JBQUE7QUNQUiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
