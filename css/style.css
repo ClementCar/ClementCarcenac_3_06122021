@@ -29,16 +29,27 @@ body {
 
 .section_informations {
   width: 100%;
+  background-color: #f6f6f6;
 }
 .section_informations__localisation {
   display: flex;
   align-items: baseline;
   justify-content: center;
   width: 100%;
-  background-color: red;
+  background-color: blue;
+  background-color: #dddddd;
 }
 .section_informations__restaurants {
   text-align: center;
+}
+.section_informations__restaurants__boutton {
+  background: linear-gradient(150deg, #FF79DA, #9356DC);
+  height: 50px;
+  width: 230px;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
