@@ -45,12 +45,17 @@ h2 {
   display: flex;
   align-items: baseline;
   width: 100%;
+  height: 40px;
   background-color: #e4e4e4;
   margin-bottom: 0;
 }
 .section_informations__localisation__icone {
   margin-right: 30px;
   margin-left: 25%;
+}
+.section_informations__localisation p {
+  margin: 0;
+  margin-top: 10px;
 }
 .section_informations__restaurants {
   text-align: center;
@@ -75,7 +80,7 @@ h2 {
   border-radius: 40px;
   color: white;
   margin: 0 auto;
-  box-shadow: 6px 6px 10px #c7c7c7;
+  box-shadow: 3px 3px 15px #c7c7c7;
   min-height: 50px;
   display: table-cell;
   vertical-align: center;
@@ -83,6 +88,7 @@ h2 {
 .section_informations__restaurants__boutton p {
   text-align: center;
   margin: 0;
+  margin-top: 15px;
 }
 .section_informations__fonctionnement {
   width: 90%;
@@ -112,7 +118,7 @@ h2 {
   margin-top: 30px;
   background-color: #f6f6f6;
   border-radius: 20px;
-  box-shadow: 6px 6px 10px #c7c7c7;
+  box-shadow: 3px 3px 15px #c7c7c7;
   position: relative;
 }
 .section_informations__fonctionnement__etape:hover {
@@ -198,6 +204,9 @@ h2 {
   font-size: 25px;
   margin-right: 10%;
 }
+.section_restaurants__bloc__figure__favoris__remplissage {
+  background-color: #9356DC;
+}
 .section_restaurants__bloc a {
   width: 100%;
   height: 210px;
@@ -214,17 +223,21 @@ footer {
 .footer {
   background-color: #353535;
   color: white;
-  padding: 20px;
+  padding: 30px;
   flex-direction: column;
 }
 .footer a {
   color: white;
-  margin-top: 7px;
+  margin-top: 5px;
 }
 .footer h2 {
   font-family: "shrikhand";
-  font-size: 23px;
+  font-size: 20px;
   padding-bottom: 10px;
+}
+.footer p {
+  margin: 0;
+  margin-top: 8px;
 }
 .footer__maj {
   display: flex;
@@ -232,6 +245,7 @@ footer {
 }
 .footer__maj h3 {
   margin: 0;
+  font-size: 15px;
 }
 .footer__maj i {
   margin-right: 15px;
