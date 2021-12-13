@@ -73,23 +73,6 @@ h2 {
   margin: 0;
   justify-content: center;
 }
-.section_informations__restaurants__boutton {
-  background: linear-gradient(150deg, #FF79DA, #9356DC);
-  height: 50px;
-  width: 210px;
-  border-radius: 40px;
-  color: white;
-  margin: 0 auto;
-  box-shadow: 3px 3px 15px #c7c7c7;
-  min-height: 50px;
-  display: table-cell;
-  vertical-align: center;
-}
-.section_informations__restaurants__boutton p {
-  text-align: center;
-  margin: 0;
-  margin-top: 15px;
-}
 .section_informations__fonctionnement {
   width: 90%;
   height: auto;
@@ -140,6 +123,26 @@ h2 {
   left: -10px;
   padding: 2px;
   top: 25px;
+}
+
+.boutton {
+  background: linear-gradient(150deg, #FF79DA, #9356DC);
+  height: 40px;
+  width: 200px;
+  border-radius: 40px;
+  color: white;
+  margin: 0 auto;
+  box-shadow: 3px 3px 15px #c7c7c7;
+  margin-top: 30px;
+  padding: 5px;
+}
+.boutton p {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.boutton--pages {
+  width: 170px;
 }
 
 .section_restaurants {
@@ -251,6 +254,71 @@ footer {
   margin-right: 15px;
   font-size: 13px;
   width: 15px;
+}
+
+#images-pages {
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  width: 100%;
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+}
+.menu__barre {
+  width: 40px;
+  height: 3px;
+  margin-top: 5px;
+  margin-left: 5%;
+  background-color: #99E2D0;
+}
+.menu__titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-left: 5%;
+  font-family: "shrikhand";
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+.menu__titre i {
+  font-size: 25px;
+  margin-right: 25px;
+}
+.menu__epd {
+  margin: 0;
+  margin-left: 5%;
+}
+.menu__bloc {
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 40px;
+}
+.menu__bloc__plats {
+  width: 100%;
+  background-color: white;
+  box-shadow: 6px 6px 10px #c7c7c7;
+  border-radius: 15px;
+  height: auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 10px;
+}
+.menu__bloc__plats p {
+  margin: 0;
+  margin-left: 4%;
+}
+.menu__bloc__plats__info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-right: 7%;
+  margin-top: 3px;
+}
+.menu__bloc__plats__info p {
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */
