@@ -25,13 +25,19 @@ body {
   width: 100%;
   box-shadow: 0 6px 10px #c7c7c7;
   margin-bottom: 2px;
+  display: flex;
+  align-items: center;
 }
 .header__img {
   width: 50%;
-  margin-left: 25%;
+  margin: 0 auto;
   margin-right: 25%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.header i {
+  font-size: 25px;
+  margin-left: 25px;
 }
 
 h2 {
@@ -202,7 +208,7 @@ h2 {
   object-fit: cover;
   object-position: center bottom;
 }
-.section_restaurants__bloc__figure i {
+.section_restaurants__bloc__figure__favoris {
   align-self: center;
   font-size: 25px;
   margin-right: 10%;
@@ -261,17 +267,21 @@ footer {
   object-fit: cover;
 }
 
+#main_delice {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-size: contain;
+}
+
+.image {
+  height: 200px;
+  width: 100%;
+}
+
 .menu {
   width: 100%;
   background-color: #f6f6f6;
   padding-bottom: 50px;
-}
-.menu__barre {
-  width: 40px;
-  height: 3px;
-  margin-top: 5px;
-  margin-left: 5%;
-  background-color: #99E2D0;
+  border-radius: 30px 30px 0 0;
 }
 .menu__titre {
   display: flex;
@@ -285,6 +295,17 @@ footer {
 .menu__titre i {
   font-size: 25px;
   margin-right: 25px;
+}
+.menu__titre h1 {
+  margin: 0;
+  margin-top: 30px;
+}
+.menu__barre {
+  width: 40px;
+  height: 3px;
+  margin-top: 5px;
+  margin-left: 5%;
+  background-color: #99E2D0;
 }
 .menu__epd {
   margin: 0;
