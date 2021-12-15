@@ -210,7 +210,7 @@ h2 {
 }
 .section_restaurants__bloc__figure .far {
   align-self: center;
-  font-size: 25px;
+  font-size: 24px;
   margin-right: 10%;
 }
 .section_restaurants__bloc a {
@@ -222,13 +222,21 @@ h2 {
   position: relative;
 }
 .coeur__plein {
-  font-size: 21px;
+  font-size: 22px;
   position: absolute;
-  top: 1px;
-  right: 1px;
+  top: 0;
+  right: 0;
   left: 1px;
-  bottom: 1px;
+  bottom: 0;
   color: white;
+}
+.coeur__plein:hover {
+  color: #9356DC;
+  font-size: 24px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 #image {
@@ -329,27 +337,58 @@ footer {
 }
 .menu__bloc__plats {
   width: 100%;
+  display: flex;
   background-color: white;
   box-shadow: 6px 6px 10px #c7c7c7;
   border-radius: 15px;
   height: auto;
-  padding-top: 3%;
-  padding-bottom: 3%;
   margin-top: 10px;
+  overflow: hidden;
 }
 .menu__bloc__plats p {
   margin: 0;
   margin-left: 4%;
+  white-space: nowrap;
 }
-.menu__bloc__plats__info {
+.menu__bloc__plats__infos {
+  width: 100%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.menu__bloc__plats__infos__sup {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   margin-right: 7%;
   margin-top: 3px;
 }
-.menu__bloc__plats__info p {
+.menu__bloc__plats__infos__sup p {
   font-size: 13px;
+}
+.menu__bloc__plats__infos__sup__cesure {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__bloc__plats__confirm {
+  height: auto;
+  background-color: #99E2D0;
+  width: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 1.5s;
+}
+.menu__bloc__plats__confirm i {
+  font-size: 25px;
+  margin-top: 25%;
+  margin-left: 25%;
+  color: white;
+}
+.menu__bloc__plats:hover {
+  color: red;
+}
+.menu__bloc__plats:hover .menu__bloc__plats__confirm {
+  transform: scaleX(1);
+  width: 20%;
 }
 
 /*# sourceMappingURL=style.css.map */
