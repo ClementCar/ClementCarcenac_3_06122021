@@ -237,21 +237,29 @@ h2{
 .coeur{
     position: relative;
     &__plein{
-        font-size: 22px;
-        position:absolute;
-        top: 0;
-        right: 0;
-        left: 1px;
-        bottom: 0;
-        color: white;
-    }
-    &__plein:hover{
-        color:$couleur-primaire;
         font-size: 24px;
+        position:absolute;
         top: 0;
         right: 0;
         left: 0;
         bottom: 0;
+        opacity: 0;
+        color: transparent;
+        -webkit-background-clip: text;
+        background: linear-gradient(red,blue);
+
+    }
+    &__plein:hover{
+        animation: favoris-plein 2s both;
+    }
+}
+
+@keyframes favoris-plein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
@@ -355,13 +363,14 @@ footer{
             background-color: white;
             box-shadow: 6px 6px 10px $couleur-ombre;
             border-radius: 15px;
-            height: auto;
+            height: 60px;
             margin-top: 10px;
             overflow: hidden;
             & p {
                 margin: 0;
                 margin-left:4%;
                 white-space: nowrap;
+                font-size: 18px;
             }
             &__infos{
                 width: 100%;
@@ -374,7 +383,7 @@ footer{
                     margin-right: 7%;
                     margin-top: 3px;
                     & p {
-                        font-size: 13px;
+                        font-size: 15px;
                     }
                     &__cesure{
                         overflow: hidden;
@@ -383,26 +392,52 @@ footer{
                 }
             }
             &__confirm{
-                height: auto;
+                height: 100%;
                 background-color: $couleur-tertiaire;
-                width: 0;
-                transform: scaleX(0);
-                transform-origin: right;
-                transition: transform 1.5s;
+                width: 15%;
+                justify-content: center;
+                align-items: center;
+                animation: confirm-fin 0.7s both;
                 & i {
-                    font-size: 25px;
-                    margin-top: 25%;
-                    margin-left: 25%;
+                    font-size: 20px;
+                    margin-top: 20px;
+                    margin-left: 20px;
                     color: white;
                 }
             }
             &:hover{
-                color: red;
                 & .menu__bloc__plats__confirm{
-                    transform: scaleX(1);
-                    width: 20%;
+                animation: confirm 0.7s both;
+                }
+                & i {
+                    animation: icone-confirm 0.7s both;
                 }
             }
         }
+    }
+}
+
+
+@keyframes confirm {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 20%;
+    }
+}
+
+@keyframes confirm-fin {
+    0%{
+        width: 20%;
+    }
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes icone-confirm {
+    100%{
+        transform: rotate(360deg);
     }
 }
