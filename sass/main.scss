@@ -309,8 +309,23 @@ footer{
     object-fit:cover;
 }
 
-#main_delice{
+#main_Palette-du-gout{
     background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    background-size:contain;
+}
+
+#main_la-note-enchante{
+    background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+    background-size:contain;
+}
+
+#main_a-la-française{
+    background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    background-size:contain;
+}
+
+#main_delice-des-sens{
+    background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
     background-size:contain;
 }
 
@@ -366,6 +381,8 @@ footer{
             height: 60px;
             margin-top: 10px;
             overflow: hidden;
+            animation: affichage-menu 1s both;
+            
             & p {
                 margin: 0;
                 margin-left:4%;
@@ -394,10 +411,10 @@ footer{
             &__confirm{
                 height: 100%;
                 background-color: $couleur-tertiaire;
-                width: 15%;
+                width: 0;
                 justify-content: center;
                 align-items: center;
-                animation: confirm-fin 0.7s both;
+                
                 & i {
                     font-size: 20px;
                     margin-top: 20px;
@@ -413,10 +430,20 @@ footer{
                     animation: icone-confirm 0.7s both;
                 }
             }
+            &:not(:hover){
+                & .menu__bloc__plats__confirm{
+                    animation: confirm-fin 0.7s both;
+                }
+            }
         }
     }
 }
 
+@for $plats from 1 to 11 {
+    .plats-#{$plats} {
+        animation-delay: #{$plats * 0.3}s ;
+    }
+}
 
 @keyframes confirm {
     0%{
@@ -439,5 +466,16 @@ footer{
 @keyframes icone-confirm {
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes affichage-menu {
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
