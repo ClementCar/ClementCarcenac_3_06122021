@@ -21,6 +21,16 @@ body {
   margin: auto;
   font-family: "roboto";
 }
+@media screen and (min-width: 769px) {
+  body {
+    max-width: 992px;
+  }
+}
+@media screen and (min-width: 993px) {
+  body {
+    max-width: 1600px;
+  }
+}
 
 .header {
   width: 100%;
@@ -71,14 +81,14 @@ h2 {
 .section_informations__localisation {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   width: 100%;
   height: 40px;
   background-color: #e4e4e4;
   margin-bottom: 0;
 }
 .section_informations__localisation__icone {
-  margin-right: 30px;
-  margin-left: 25%;
+  margin-right: 25px;
 }
 .section_informations__localisation p {
   margin: 0;
@@ -119,7 +129,7 @@ h2 {
   margin-left: 20px;
   font-size: 15px;
 }
-.section_informations__fonctionnement__etape {
+.section_informations__fonctionnement__bloc__etape {
   display: flex;
   align-items: baseline;
   align-items: center;
@@ -131,13 +141,13 @@ h2 {
   box-shadow: 6px 6px 10px #dddddd;
   position: relative;
 }
-.section_informations__fonctionnement__etape:hover {
+.section_informations__fonctionnement__bloc__etape:hover {
   background-color: #f5edff;
 }
-.section_informations__fonctionnement__etape:hover i {
+.section_informations__fonctionnement__bloc__etape:hover i {
   color: #9356DC;
 }
-.section_informations__fonctionnement__etape p {
+.section_informations__fonctionnement__bloc__etape p {
   background-color: #9356DC;
   margin: 0;
   width: 20px;
@@ -150,6 +160,18 @@ h2 {
   left: -10px;
   padding: 2px;
   top: 25px;
+}
+@media screen and (min-width: 769px) {
+  .section_informations__fonctionnement {
+    flex-direction: row;
+  }
+  .section_informations__fonctionnement__bloc {
+    display: flex;
+  }
+  .section_informations__fonctionnement__bloc__etape {
+    width: 30%;
+    margin-right: 0;
+  }
 }
 
 .boutton {
@@ -201,7 +223,7 @@ h2 {
   position: relative;
 }
 .section_restaurants__bloc__figure__info {
-  margin-top: 2%;
+  margin-top: 10px;
   margin-left: 5%;
   width: 100%;
 }
@@ -220,7 +242,7 @@ h2 {
 }
 .section_restaurants__bloc__figure h3, .section_restaurants__bloc__figure p {
   margin: 0;
-  margin-top: 2%;
+  margin-top: 5px;
 }
 .section_restaurants__bloc__figure img {
   width: 100%;
@@ -236,7 +258,21 @@ h2 {
 }
 .section_restaurants__bloc a {
   width: 100%;
-  height: 210px;
+  height: auto;
+}
+@media screen and (min-width: 769px) {
+  .section_restaurants__bloc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .section_restaurants__bloc a {
+    width: 45%;
+    justify-content: space-between;
+  }
+  .section_restaurants__bloc__figure {
+    width: 100%;
+  }
 }
 
 .coeur {
@@ -305,6 +341,18 @@ footer {
   margin-right: 15px;
   font-size: 13px;
   width: 15px;
+}
+@media screen and (min-width: 769px) {
+  .footer h2 {
+    text-align: center;
+  }
+  .footer__bloc {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer__bloc p {
+    margin: 0;
+  }
 }
 
 #images-pages {
@@ -520,16 +568,27 @@ footer {
   border: 3px #f6f6f6 solid;
   border-top-color: #99E2D0;
   border-radius: 50%;
-  animation: rotation 1000ms both infinite alternate;
+  animation: rotation 1000ms both infinite linear;
+}
+.loading-spinner__contour--1 {
+  animation-delay: 250ms;
+}
+.loading-spinner__contour--2 {
+  animation-delay: 500ms;
+}
+.loading-spinner__contour--3 {
+  animation-delay: 750ms;
+}
+.loading-spinner__contour--4 {
+  animation-delay: 1000ms;
 }
 .loading-spinner__contour__point {
   width: 50px;
   height: 50px;
   margin: 20px;
   border-radius: 50%;
-  background: linear-gradient(#9356DC, #FF79DA);
-  animation: loading 1s both infinite;
-  animation-direction: alternate;
+  /*background: linear-gradient($couleur-primaire,$couleur-secondaire);*/
+  animation: loading 1s both infinite alternate;
 }
 .loading-spinner__contour__point--1 {
   animation-delay: 250ms;
@@ -551,9 +610,11 @@ footer {
 }
 @keyframes loading {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.1);
+    background-color: #9356DC;
   }
   100% {
+    background-color: #FF79DA;
     transform: scale(1);
   }
 }

@@ -4,4 +4,9 @@ $couleur-tertiaire:#99E2D0 ;
 $couleur-fond:#f6f6f6 ;
 $couleur-footer:#353535 ;
 $couleur-ombre:darken($color: $couleur-fond, $amount: 10%);
-$temps-animation-affichage:5;
+$breakpoint: (
+    Ipad:769px,
+    Max-ipad:992px,
+    Ordinateur:993px,
+    Max-ordinateur:1600px
+    )

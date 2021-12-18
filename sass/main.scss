@@ -31,10 +31,28 @@ a{
     color: darken($couleur,40%);
 }
 
+@mixin media-ipad {
+    @media screen and (min-width:map-get($breakpoint,Ipad)){
+        @content;
+    }
+}
+
+@mixin media-ordinateur {
+    @media screen and (min-width:map-get($breakpoint,Ordinateur)){
+        @content;
+    }
+}
+
 body{
     max-width: 768px;
     margin:auto;
     font-family: 'roboto';
+    @include media-ipad{
+        max-width: map-get($breakpoint , Max-ipad );
+    }
+    @include media-ordinateur{
+        max-width: map-get($breakpoint, Max-ordinateur);
+    }
 }
 
 .header{
@@ -91,17 +109,18 @@ h2{
     &__localisation{
         display:flex;
         align-items: baseline;
+        justify-content: center;
         width: 100%;
         height: 40px;
         @include assombrir($couleur-fond);
         margin-bottom:0;
         &__icone{
-            margin-right: 30px;
-            margin-left: 25%;
+            margin-right: 25px;
         }
         & p {
             margin: 0;
             margin-top: 10px;
+
         }
     }
     &__restaurants{
@@ -138,36 +157,48 @@ h2{
             margin-left: 20px;
             font-size: 15px;
         }
-        &__etape{
-            display: flex;
-            align-items: baseline;
-            align-items: center;
-            margin-left: 5%;
-            height: 70px;
-            margin-top:30px;
-            background-color: $couleur-fond;
-            border-radius:20px;
-            @include ombrage;
-            position: relative;
-            &:hover{
-                background-color: #f5edff;
-                & i {
-                    color:$couleur-primaire;
+        &__bloc{
+            &__etape{
+                display: flex;
+                align-items: baseline;
+                align-items: center;
+                margin-left: 5%;
+                height: 70px;
+                margin-top:30px;
+                background-color: $couleur-fond;
+                border-radius:20px;
+                @include ombrage;
+                position: relative;
+                &:hover{
+                    background-color: #f5edff;
+                    & i {
+                        color:$couleur-primaire;
+                    }
+                }
+                & p {
+                    background-color: $couleur-primaire;
+                    margin:0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius:  15px;
+                    text-align: center;
+                    vertical-align: center;
+                    color:white;
+                    position: absolute;
+                    left: -10px;
+                    padding: 2px;
+                    top:25px;
                 }
             }
-            & p {
-                background-color: $couleur-primaire;
-                margin:0;
-                width: 20px;
-                height: 20px;
-                border-radius:  15px;
-                text-align: center;
-                vertical-align: center;
-                color:white;
-                position: absolute;
-                left: -10px;
-                padding: 2px;
-                top:25px;
+        }
+        @include media-ipad{
+            flex-direction: row;
+            &__bloc{
+                display: flex;
+                &__etape{
+                    width: 30%;
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -219,7 +250,7 @@ h2{
             border-radius: 20px;
             position: relative;
             &__info{
-                margin-top:2%;
+                margin-top:10px;
                 margin-left: 5%;
                 width: 100%;
             }
@@ -238,7 +269,7 @@ h2{
             }
             & h3, p {
                 margin: 0;
-                margin-top: 2%;  
+                margin-top: 5px;  
             }
             & img {
                 width: 100%;
@@ -255,7 +286,19 @@ h2{
         }
         & a {
             width: 100%;
-            height: 210px;
+            height: auto;
+        }
+        @include media-ipad{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            & a {
+                width: 45%;
+                justify-content: space-between;
+            }
+            &__figure{
+                width: 100%;
+            }
         }
     }
 }
@@ -326,6 +369,18 @@ footer{
             margin-right: 15px;
             font-size: 13px;
             width: 15px;
+        }
+    }
+    @include media-ipad{
+        & h2 {
+            text-align: center;
+        }
+        &__bloc{
+            display: flex;
+            justify-content: space-evenly;
+            & p {
+                margin:0;
+            }
         }
     }
 }
@@ -519,15 +574,19 @@ footer{
         border: 3px $couleur-fond solid;
         border-top-color: $couleur-tertiaire;
         border-radius: 50%;
-        animation: rotation 1000ms both infinite alternate;
+        animation: rotation 1000ms both infinite linear;
+        @for $delai from 1 to 5 {
+            &--#{$delai} {
+                animation-delay: #{calc(1000/4) * $delai}ms;
+            }
+        }
         &__point{
             width: 50px;
             height: 50px;
             margin: 20px;
             border-radius: 50%;
-            background: linear-gradient($couleur-primaire,$couleur-secondaire);
-            animation: loading 1s both infinite;
-            animation-direction: alternate;
+            /*background: linear-gradient($couleur-primaire,$couleur-secondaire);*/
+            animation: loading 1s both infinite alternate;
             @for $delai from 1 to 5 {
                 &--#{$delai} {
                     animation-delay: #{calc(1000/4) * $delai}ms;
@@ -545,9 +604,11 @@ footer{
 
 @keyframes loading {
     0%{
-        transform: scale(0.5);
+        transform: scale(0.1);
+        background-color: $couleur-primaire;
     }
     100%{
+        background-color: $couleur-secondaire;
         transform: scale(1);
     }
 }
