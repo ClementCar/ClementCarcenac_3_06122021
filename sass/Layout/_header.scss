@@ -1,0 +1,21 @@
+.header{
+    width: 100%;
+    box-shadow: 0 6px 10px $couleur-ombre;
+    display: flex;
+    align-items: center;
+    &__img{
+        width: 50%;
+        margin: 0 auto;
+        margin-right:25%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    & i {
+        font-size: 20px;
+        margin-left: 25px;
+        animation: animation-retour-fin-head 1s both;
+        &:hover{
+            animation: animation-retour-head 1s both;
+        }
+    }
+}

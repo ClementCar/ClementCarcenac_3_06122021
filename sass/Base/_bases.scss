@@ -1,0 +1,21 @@
+body{
+    max-width: 768px;
+    margin:auto;
+    font-family: 'roboto';
+    @include media-ipad{
+        max-width: map-get($breakpoint , Max-ipad );
+    }
+    @include media-ordinateur{
+        max-width: map-get($breakpoint, Max-ordinateur);
+    }
+}
+
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+h2{
+    margin:0;
+}

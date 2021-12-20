@@ -1,0 +1,100 @@
+.section_informations{
+    width: 100%;
+    margin-top: 2px;
+    &__localisation{
+        display:flex;
+        align-items: baseline;
+        justify-content: center;
+        width: 100%;
+        height: 40px;
+        @include assombrir($couleur-fond);
+        margin-bottom:0;
+        &__icone{
+            margin-right: 25px;
+        }
+        & p {
+            margin: 0;
+            margin-top: 10px;
+
+        }
+    }
+    &__restaurants{
+        text-align: center;
+        background-color: $couleur-fond;
+        margin-top:0;
+        padding:40px;
+        justify-content: center;
+        align-items: center;
+        &__titre{
+            margin-left:10px;
+            margin-right:10px;
+        }
+        & a {
+            margin: 0;
+            justify-content: center;
+        }
+    }
+    &__fonctionnement{
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 40px;
+        flex-direction: column;
+        & i {
+            margin-left: 30px;
+            font-size: 15px;
+            width: 15px;
+            color:#7e7e7e;
+        }
+        & h3{
+            margin:0;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+        &__bloc{
+            &__etape{
+                display: flex;
+                align-items: baseline;
+                align-items: center;
+                margin-left: 5%;
+                height: 70px;
+                margin-top:30px;
+                background-color: $couleur-fond;
+                border-radius:20px;
+                @include ombrage;
+                position: relative;
+                &:hover{
+                    background-color: #f5edff;
+                    & i {
+                        color:$couleur-primaire;
+                    }
+                }
+                & p {
+                    background-color: $couleur-primaire;
+                    margin:0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius:  15px;
+                    text-align: center;
+                    vertical-align: center;
+                    color:white;
+                    position: absolute;
+                    left: -10px;
+                    padding: 2px;
+                    top:25px;
+                }
+            }
+        }
+        @include media-ipad{
+            flex-direction: row;
+            &__bloc{
+                display: flex;
+                &__etape{
+                    width: 30%;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

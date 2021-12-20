@@ -1,310 +1,20 @@
 @import "Utils/variables";
-
-@font-face {
-    font-family: 'shrikhand';
-    src: url('../fonts/shrikhand-regular-webfont.woff2') format('woff2'),
-         url('../fonts/shrikhand-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-a{
-    text-decoration: none;
-    color:black;
-}
-
-@mixin assombrir ($couleur) {
-    background-color: darken($couleur,7%);
-}
-
-@mixin assombrir-couleur ($couleur) {
-    color: darken($couleur,40%);
-}
-
-@mixin media-ipad {
-    @media screen and (min-width:map-get($breakpoint,Ipad)){
-        @content;
-    }
-}
-
-@mixin media-ordinateur {
-    @media screen and (min-width:map-get($breakpoint,Ordinateur)){
-        @content;
-    }
-}
-
-body{
-    max-width: 768px;
-    margin:auto;
-    font-family: 'roboto';
-    @include media-ipad{
-        max-width: map-get($breakpoint , Max-ipad );
-    }
-    @include media-ordinateur{
-        max-width: map-get($breakpoint, Max-ordinateur);
-    }
-}
-
-.header{
-    width: 100%;
-    box-shadow: 0 6px 10px $couleur-ombre;
-    display: flex;
-    align-items: center;
-    &__img{
-        width: 50%;
-        margin: 0 auto;
-        margin-right:25%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    & i {
-        font-size: 20px;
-        margin-left: 25px;
-        animation: animation-retour-fin 1s both;
-        &:hover{
-            animation: animation-retour 1s both;
-        }
-    }
-}
-
-@keyframes animation-retour {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-20px);
-    }
-}
-
-@keyframes animation-retour-fin {
-    0%{
-        transform: translateX(-20px);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-
-@mixin ombrage{
-    box-shadow: 6px 6px 10px $couleur-ombre;
-}
-
-h2{
-    margin:0;
-}
-
-.section_informations{
-    width: 100%;
-    margin-top: 2px;
-    &__localisation{
-        display:flex;
-        align-items: baseline;
-        justify-content: center;
-        width: 100%;
-        height: 40px;
-        @include assombrir($couleur-fond);
-        margin-bottom:0;
-        &__icone{
-            margin-right: 25px;
-        }
-        & p {
-            margin: 0;
-            margin-top: 10px;
-
-        }
-    }
-    &__restaurants{
-        text-align: center;
-        background-color: $couleur-fond;
-        margin-top:0;
-        padding:40px;
-        justify-content: center;
-        align-items: center;
-        &__titre{
-            margin-left:10px;
-            margin-right:10px;
-        }
-        & a {
-            margin: 0;
-            justify-content: center;
-        }
-    }
-    &__fonctionnement{
-        width: 90%;
-        height: auto;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 40px;
-        flex-direction: column;
-        & i {
-            margin-left: 30px;
-            font-size: 15px;
-            width: 15px;
-            color:#7e7e7e;
-        }
-        & h3{
-            margin:0;
-            margin-left: 20px;
-            font-size: 15px;
-        }
-        &__bloc{
-            &__etape{
-                display: flex;
-                align-items: baseline;
-                align-items: center;
-                margin-left: 5%;
-                height: 70px;
-                margin-top:30px;
-                background-color: $couleur-fond;
-                border-radius:20px;
-                @include ombrage;
-                position: relative;
-                &:hover{
-                    background-color: #f5edff;
-                    & i {
-                        color:$couleur-primaire;
-                    }
-                }
-                & p {
-                    background-color: $couleur-primaire;
-                    margin:0;
-                    width: 20px;
-                    height: 20px;
-                    border-radius:  15px;
-                    text-align: center;
-                    vertical-align: center;
-                    color:white;
-                    position: absolute;
-                    left: -10px;
-                    padding: 2px;
-                    top:25px;
-                }
-            }
-        }
-        @include media-ipad{
-            flex-direction: row;
-            &__bloc{
-                display: flex;
-                &__etape{
-                    width: 30%;
-                    margin-right: 0;
-                }
-            }
-        }
-    }
-}
-
-.boutton{
-    background: linear-gradient(150deg,$couleur-secondaire,$couleur-primaire);
-    height: 40px;
-    width: 200px;
-    border-radius: 40px;
-    color:white;
-    margin: 0 auto;
-    @include ombrage;
-    margin-top: 30px;
-    padding: 5px;
-    & p {
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 10px;
-    }
-    &--pages{
-        width: 170px;
-    }
-}
-
-.section_restaurants{
-    width: 100%;
-    background-color: $couleur-fond;
-    height: auto;
-    margin-top: 50px;
-    padding-top:40px;
-    padding-bottom:40px;
-    flex-direction: column;
-    & h2 {
-        margin-left: 5%;
-    }
-    &__bloc{
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 50px;
-        &__figure{
-            width: 100%;
-            height: 250px;
-            margin: 0;
-            margin-top: 20px;
-            background-color: white;
-            @include ombrage;
-            border-radius: 20px;
-            position: relative;
-            &__info{
-                margin-top:10px;
-                margin-left: 5%;
-                width: 100%;
-            }
-            &__nouveau{
-                background-color: $couleur-tertiaire;
-                padding: 5px 10px 5px 10px;
-                border-radius:2px;
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                @include assombrir-couleur($couleur-tertiaire)
-            }
-            & figcaption{
-                display: flex;
-                justify-content: space-between;
-            }
-            & h3, p {
-                margin: 0;
-                margin-top: 5px;  
-            }
-            & img {
-                width: 100%;
-                height: 70%;
-                border-radius: 20px 20px 0 0;
-                object-fit: cover;
-                object-position: center bottom;
-            }
-            & .far {
-                align-self: center;
-                font-size: 24px;
-                margin-right: 10%;
-            }
-        }
-        & a {
-            width: 100%;
-            height: auto;
-        }
-        @include media-ipad{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            & a {
-                width: 45%;
-                justify-content: space-between;
-            }
-            &__figure{
-                width: 100%;
-            }
-        }
-    }
-}
+@import "Utils/mixins";
+@import "Utils/keyframes";
+@import "Base/polices";
+@import "Base/bases";
+@import "Layout/header";
+@import "Layout/footer";
+@import "Composants/boutton";
+@import "Composants/section-informations";
+@import "Composants/section-restaurants";
+@import "Composants/menu";
+@import "Pages/images-pages";
+@import "Composants/loading";
 
 .coeur{
     position: relative;
+    box-sizing: border-box;
     &__plein{
         font-size: 24px;
         position:absolute;
@@ -315,6 +25,7 @@ h2{
         opacity: 0;
         color: transparent;
         -webkit-background-clip: text;
+                background-clip: text;
         background: linear-gradient(red,blue);
 
     }
@@ -336,282 +47,19 @@ h2{
     object-position: center;
 }
 
-footer{
-    margin-bottom: 2000px;
-}
 
-.footer{
-    background-color: $couleur-footer;
-    color: white;
-    padding: 30px;
-    flex-direction: column;
-    & a {
-        color: white;
-        margin-top: 5px;
-    }
-    & h2 {
-        font-family:'shrikhand' ;
-        font-size: 20px;
-        padding-bottom: 10px;
-    }
-    & p {
-        margin: 0;
-        margin-top: 8px;
-    }
-    &__maj{
-        display: flex;
-        align-items: baseline;
-        & h3 {
-            margin: 0;
-            font-size: 15px;
-        }
-        & i {
-            margin-right: 15px;
-            font-size: 13px;
-            width: 15px;
-        }
-    }
-    @include media-ipad{
-        & h2 {
-            text-align: center;
-        }
-        &__bloc{
-            display: flex;
-            justify-content: space-evenly;
-            & p {
-                margin:0;
-            }
-        }
-    }
-}
 
 #images-pages{
     width: 100%;
     object-fit:cover;
 }
 
-#main_Palette-du-gout{
-    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-    background-size:contain;
-}
-
-#main_la-note-enchante{
-    background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-    background-size:contain;
-    background-position: center;
-}
-
-#main_a-la-française{
-    background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-    background-size:contain;
-}
-
-#main_delice-des-sens{
-    background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-    background-size:contain;
-}
-
-.image{
-    height: 200px;
-    width: 100%;
-    @include media-ipad{
-        height: 400px;
-    }
-}
-
-.menu{
-    width: 100%;
-    background-color: $couleur-fond;
-    padding-bottom: 50px;
-    border-radius: 30px 30px 0 0 ;
-    &__titre{
-        display:flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-left: 5%;
-        font-family: 'shrikhand';
-        font-size: 13px;
-        margin-bottom: 40px;
-        & .far {
-            font-size:25px;
-            margin-right: 25px;
-        }
-        & h1 {
-            margin: 0;
-            margin-top: 30px;
-        }
-    }
-    &__main{
-        width: 100%;
-        @include media-ipad{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        &__container{
-            width: 100%;
-            @include media-ipad{
-                width: 50%;
-            }
-            &__barre{
-                width: 40px;
-                height: 3px;
-                margin-top: 5px;
-                margin-left: 5%;
-                background-color: $couleur-tertiaire;
-            }
-            &__epd{
-                margin: 0;
-                margin-left: 5%;
-            }
-            &__bloc{
-                width: 94%;
-                margin-left: 3%;
-                margin-right: 3%;
-                margin-bottom: 40px;
-                &__plats{
-                    width: 100%;
-                    display: flex;
-                    background-color: white;
-                    @include ombrage;
-                    border-radius: 15px;
-                    height: 60px;
-                    margin-top: 10px;
-                    overflow: hidden;
-                    animation: affichage-menu 1s both;
-                    
-                    & p {
-                        margin: 0;
-                        margin-left:4%;
-                        white-space: nowrap;
-                        font-size: 18px;
-                    }
-                    &__infos{
-                        width: 100%;
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                        &__sup{
-                            display: flex;
-                            align-items: baseline;
-                            justify-content: space-between;
-                            margin-right: 7%;
-                            margin-top: 3px;
-                            & p {
-                                font-size: 15px;
-                            }
-                            &__cesure{
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                            }
-                        }
-                    }
-                    &__confirm{
-                        height: 100%;
-                        background-color: $couleur-tertiaire;
-                        width: 0;
-                        justify-content: center;
-                        align-items: center;
-                        
-                        & i {
-                            font-size: 20px;
-                            margin-top: 20px;
-                            margin-left: 20px;
-                            color: white;
-                        }
-                    }
-                    &:hover{
-                        & .menu__main__container__bloc__plats__confirm{
-                        animation: confirm 0.7s both;
-                        }
-                        & i {
-                            animation: icone-confirm 0.7s both;
-                        }
-                    }
-                    &:not(:hover){
-                        & .menu__main__container__bloc__plats__confirm{
-                            animation: confirm-fin 0.7s both;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@for $plats from 1 to 11 {
-    .plats-#{$plats} {
-        animation-delay: #{$plats * 0.3}s ;
-    }
-}
-
-@keyframes confirm {
-    0%{
-        width: 0;
-    }
-    100%{
-        width: 20%;
-    }
-}
-
-@keyframes confirm-fin {
-    0%{
-        width: 20%;
-    }
-    100%{
-        width: 0;
-    }
-}
-
-@keyframes icone-confirm {
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes affichage-menu {
-    0%{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 
-.loading-spinner{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
-    &__contour{
-        border: 3px $couleur-fond solid;
-        border-top-color: $couleur-tertiaire;
-        border-radius: 50%;
-        animation: rotation 1000ms both infinite linear;
-        @for $delai from 1 to 5 {
-            &--#{$delai} {
-                animation-delay: #{calc(1000/4) * $delai}ms;
-            }
-        }
-        &__point{
-            width: 50px;
-            height: 50px;
-            margin: 20px;
-            border-radius: 50%;
-            /*background: linear-gradient($couleur-primaire,$couleur-secondaire);*/
-            animation: loading 1s both infinite alternate;
-            @for $delai from 1 to 5 {
-                &--#{$delai} {
-                    animation-delay: #{calc(1000/4) * $delai}ms;
-                }
-            }
-        }
-    }
-}
+
+
+
+
 
 @keyframes rotation {
     100%{
@@ -627,5 +75,15 @@ footer{
     100%{
         background-color: $couleur-secondaire;
         transform: scale(1);
+    }
+}
+
+@keyframes loading-vu {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
     }
 }

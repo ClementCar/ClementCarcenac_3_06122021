@@ -1,0 +1,19 @@
+.boutton{
+    background: linear-gradient(150deg,$couleur-secondaire,$couleur-primaire);
+    height: 40px;
+    width: 200px;
+    border-radius: 40px;
+    color:white;
+    margin: 0 auto;
+    @include ombrage;
+    margin-top: 30px;
+    padding: 5px;
+    & p {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    &--pages{
+        width: 170px;
+    }
+}

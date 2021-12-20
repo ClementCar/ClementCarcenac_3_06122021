@@ -1,0 +1,23 @@
+@mixin assombrir ($couleur) {
+    background-color: darken($couleur,7%);
+}
+
+@mixin assombrir-couleur ($couleur) {
+    color: darken($couleur,40%);
+}
+
+@mixin media-ipad {
+    @media screen and (min-width:map-get($breakpoint,Ipad)){
+        @content;
+    }
+}
+
+@mixin media-ordinateur {
+    @media screen and (min-width:map-get($breakpoint,Ordinateur)){
+        @content;
+    }
+}
+
+@mixin ombrage{
+    box-shadow: 6px 6px 10px $couleur-ombre;
+}

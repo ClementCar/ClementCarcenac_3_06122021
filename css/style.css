@@ -1,4 +1,51 @@
 @charset "UTF-8";
+@keyframes animation-retour-head {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+@keyframes animation-retour-fin-head {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes confirm {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 20%;
+  }
+}
+@keyframes confirm-fin {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes icone-confirm {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes affichage-menu {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @font-face {
   font-family: "shrikhand";
   src: url("../fonts/shrikhand-regular-webfont.woff2") format("woff2"), url("../fonts/shrikhand-regular-webfont.woff") format("woff");
@@ -11,11 +58,6 @@
   font-weight: normal;
   font-style: normal;
 }
-a {
-  text-decoration: none;
-  color: black;
-}
-
 body {
   max-width: 768px;
   margin: auto;
@@ -30,6 +72,15 @@ body {
   body {
     max-width: 1600px;
   }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  margin: 0;
 }
 
 .header {
@@ -48,30 +99,76 @@ body {
 .header i {
   font-size: 20px;
   margin-left: 25px;
-  animation: animation-retour-fin 1s both;
+  animation: animation-retour-fin-head 1s both;
 }
 .header i:hover {
-  animation: animation-retour 1s both;
+  animation: animation-retour-head 1s both;
 }
 
-@keyframes animation-retour {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-20px);
-  }
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 30px;
+  flex-direction: column;
 }
-@keyframes animation-retour-fin {
-  0% {
-    transform: translateX(-20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.footer a {
+  color: white;
+  margin-top: 5px;
 }
-h2 {
+.footer h2 {
+  font-family: "shrikhand";
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.footer p {
   margin: 0;
+  margin-top: 8px;
+}
+.footer__maj {
+  display: flex;
+  align-items: baseline;
+}
+.footer__maj h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.footer__maj i {
+  margin-right: 15px;
+  font-size: 13px;
+  width: 15px;
+}
+@media screen and (min-width: 769px) {
+  .footer h2 {
+    text-align: center;
+  }
+  .footer__bloc {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer__bloc p {
+    margin: 0;
+    margin-top: 5px;
+  }
+}
+
+.boutton {
+  background: linear-gradient(150deg, #FF79DA, #9356DC);
+  height: 40px;
+  width: 200px;
+  border-radius: 40px;
+  color: white;
+  margin: 0 auto;
+  box-shadow: 6px 6px 10px #dddddd;
+  margin-top: 30px;
+  padding: 5px;
+}
+.boutton p {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.boutton--pages {
+  width: 170px;
 }
 
 .section_informations {
@@ -174,26 +271,6 @@ h2 {
   }
 }
 
-.boutton {
-  background: linear-gradient(150deg, #FF79DA, #9356DC);
-  height: 40px;
-  width: 200px;
-  border-radius: 40px;
-  color: white;
-  margin: 0 auto;
-  box-shadow: 6px 6px 10px #dddddd;
-  margin-top: 30px;
-  padding: 5px;
-}
-.boutton p {
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-.boutton--pages {
-  width: 170px;
-}
-
 .section_restaurants {
   width: 100%;
   background-color: #f6f6f6;
@@ -274,120 +351,9 @@ h2 {
     width: 100%;
   }
 }
-
-.coeur {
-  position: relative;
-}
-.coeur__plein {
-  font-size: 24px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  opacity: 0;
-  color: transparent;
-  -webkit-background-clip: text;
-  background: linear-gradient(red, blue);
-}
-.coeur__plein:hover {
-  animation: favoris-plein 2s both;
-}
-
-@keyframes favoris-plein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-#image {
-  object-position: center;
-}
-
-footer {
-  margin-bottom: 2000px;
-}
-
-.footer {
-  background-color: #353535;
-  color: white;
-  padding: 30px;
-  flex-direction: column;
-}
-.footer a {
-  color: white;
-  margin-top: 5px;
-}
-.footer h2 {
-  font-family: "shrikhand";
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-.footer p {
-  margin: 0;
-  margin-top: 8px;
-}
-.footer__maj {
-  display: flex;
-  align-items: baseline;
-}
-.footer__maj h3 {
-  margin: 0;
-  font-size: 15px;
-}
-.footer__maj i {
-  margin-right: 15px;
-  font-size: 13px;
-  width: 15px;
-}
-@media screen and (min-width: 769px) {
-  .footer h2 {
-    text-align: center;
-  }
-  .footer__bloc {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .footer__bloc p {
-    margin: 0;
-  }
-}
-
-#images-pages {
-  width: 100%;
-  object-fit: cover;
-}
-
-#main_Palette-du-gout {
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-  background-size: contain;
-}
-
-#main_la-note-enchante {
-  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-  background-size: contain;
-  background-position: center;
-}
-
-#main_a-la-française {
-  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-  background-size: contain;
-}
-
-#main_delice-des-sens {
-  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-  background-size: contain;
-}
-
-.image {
-  height: 200px;
-  width: 100%;
-}
-@media screen and (min-width: 769px) {
-  .image {
-    height: 400px;
+@media screen and (min-width: 993px) {
+  .section_restaurants__bloc a {
+    width: 23%;
   }
 }
 
@@ -414,6 +380,11 @@ footer {
   margin: 0;
   margin-top: 30px;
 }
+@media screen and (min-width: 993px) {
+  .menu__titre {
+    text-align: center;
+  }
+}
 .menu__main {
   width: 100%;
 }
@@ -430,6 +401,11 @@ footer {
 @media screen and (min-width: 769px) {
   .menu__main__container {
     width: 50%;
+  }
+}
+@media screen and (min-width: 993px) {
+  .menu__main__container {
+    width: 33%;
   }
 }
 .menu__main__container__barre {
@@ -459,6 +435,7 @@ footer {
   margin-top: 10px;
   overflow: hidden;
   animation: affichage-menu 1s both;
+  animation-delay: 4s;
 }
 .menu__main__container__bloc__plats p {
   margin: 0;
@@ -509,86 +486,95 @@ footer {
 }
 
 .plats-1 {
-  animation-delay: 0.3s;
-}
-
-.plats-2 {
-  animation-delay: 0.6s;
-}
-
-.plats-3 {
-  animation-delay: 0.9s;
-}
-
-.plats-4 {
-  animation-delay: 1.2s;
-}
-
-.plats-5 {
-  animation-delay: 1.5s;
-}
-
-.plats-6 {
   animation-delay: 1.8s;
 }
 
-.plats-7 {
+.plats-2 {
   animation-delay: 2.1s;
 }
 
-.plats-8 {
+.plats-3 {
   animation-delay: 2.4s;
 }
 
-.plats-9 {
+.plats-4 {
   animation-delay: 2.7s;
 }
 
-.plats-10 {
+.plats-5 {
   animation-delay: 3s;
 }
 
-@keyframes confirm {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 20%;
-  }
+.plats-6 {
+  animation-delay: 3.3s;
 }
-@keyframes confirm-fin {
-  0% {
-    width: 20%;
-  }
-  100% {
-    width: 0;
-  }
+
+.plats-7 {
+  animation-delay: 3.6s;
 }
-@keyframes icone-confirm {
-  100% {
-    transform: rotate(360deg);
-  }
+
+.plats-8 {
+  animation-delay: 3.9s;
 }
-@keyframes affichage-menu {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.plats-9 {
+  animation-delay: 4.2s;
 }
-.loading-spinner {
+
+.plats-10 {
+  animation-delay: 4.5s;
+}
+
+#main_Palette-du-gout {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-size: contain;
+}
+
+#main_la-note-enchante {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-size: contain;
+  background-position: center;
+}
+
+#main_a-la-française {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-size: contain;
+}
+
+#main_delice-des-sens {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-size: contain;
+}
+
+.image {
+  height: 200px;
   width: 100%;
-  height: auto;
+}
+@media screen and (min-width: 769px) {
+  .image {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 993px) {
+  .image {
+    height: 600px;
+  }
+}
+
+.loading-spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 40;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
+  animation: loading-vu 2s both cubic-bezier(1, 0.06, 1, -0.22);
 }
 .loading-spinner__contour {
-  border: 3px #f6f6f6 solid;
+  border: 3px white solid;
   border-top-color: #99E2D0;
   border-radius: 50%;
   animation: rotation 1000ms both infinite linear;
@@ -626,6 +612,44 @@ footer {
   animation-delay: 1000ms;
 }
 
+.coeur {
+  position: relative;
+  box-sizing: border-box;
+}
+.coeur__plein {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background: linear-gradient(red, blue);
+}
+.coeur__plein:hover {
+  animation: favoris-plein 2s both;
+}
+
+@keyframes favoris-plein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#image {
+  object-position: center;
+}
+
+#images-pages {
+  width: 100%;
+  object-fit: cover;
+}
+
 @keyframes rotation {
   100% {
     transform: rotate(360deg);
@@ -639,6 +663,15 @@ footer {
   100% {
     background-color: #FF79DA;
     transform: scale(1);
+  }
+}
+@keyframes loading-vu {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }
 
