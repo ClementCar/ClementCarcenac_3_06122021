@@ -414,6 +414,9 @@ footer{
 .image{
     height: 200px;
     width: 100%;
+    @include media-ipad{
+        height: 400px;
+    }
 }
 
 .menu{
@@ -438,83 +441,97 @@ footer{
             margin-top: 30px;
         }
     }
-    &__barre{
-        width: 40px;
-        height: 3px;
-        margin-top: 5px;
-        margin-left: 5%;
-        background-color: $couleur-tertiaire;
-    }
-    &__epd{
-        margin: 0;
-        margin-left: 5%;
-    }
-    &__bloc{
-        width: 94%;
-        margin-left: 3%;
-        margin-right: 3%;
-        margin-bottom: 40px;
-        &__plats{
-            width: 100%;
+    &__main{
+        width: 100%;
+        @include media-ipad{
             display: flex;
-            background-color: white;
-            @include ombrage;
-            border-radius: 15px;
-            height: 60px;
-            margin-top: 10px;
-            overflow: hidden;
-            animation: affichage-menu 1s both;
-            
-            & p {
-                margin: 0;
-                margin-left:4%;
-                white-space: nowrap;
-                font-size: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__container{
+            width: 100%;
+            @include media-ipad{
+                width: 50%;
             }
-            &__infos{
-                width: 100%;
-                margin-top: 3%;
-                margin-bottom: 3%;
-                &__sup{
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: space-between;
-                    margin-right: 7%;
-                    margin-top: 3px;
-                    & p {
-                        font-size: 15px;
-                    }
-                    &__cesure{
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                }
-            }
-            &__confirm{
-                height: 100%;
+            &__barre{
+                width: 40px;
+                height: 3px;
+                margin-top: 5px;
+                margin-left: 5%;
                 background-color: $couleur-tertiaire;
-                width: 0;
-                justify-content: center;
-                align-items: center;
-                
-                & i {
-                    font-size: 20px;
-                    margin-top: 20px;
-                    margin-left: 20px;
-                    color: white;
-                }
             }
-            &:hover{
-                & .menu__bloc__plats__confirm{
-                animation: confirm 0.7s both;
-                }
-                & i {
-                    animation: icone-confirm 0.7s both;
-                }
+            &__epd{
+                margin: 0;
+                margin-left: 5%;
             }
-            &:not(:hover){
-                & .menu__bloc__plats__confirm{
-                    animation: confirm-fin 0.7s both;
+            &__bloc{
+                width: 94%;
+                margin-left: 3%;
+                margin-right: 3%;
+                margin-bottom: 40px;
+                &__plats{
+                    width: 100%;
+                    display: flex;
+                    background-color: white;
+                    @include ombrage;
+                    border-radius: 15px;
+                    height: 60px;
+                    margin-top: 10px;
+                    overflow: hidden;
+                    animation: affichage-menu 1s both;
+                    
+                    & p {
+                        margin: 0;
+                        margin-left:4%;
+                        white-space: nowrap;
+                        font-size: 18px;
+                    }
+                    &__infos{
+                        width: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        &__sup{
+                            display: flex;
+                            align-items: baseline;
+                            justify-content: space-between;
+                            margin-right: 7%;
+                            margin-top: 3px;
+                            & p {
+                                font-size: 15px;
+                            }
+                            &__cesure{
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                    &__confirm{
+                        height: 100%;
+                        background-color: $couleur-tertiaire;
+                        width: 0;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        & i {
+                            font-size: 20px;
+                            margin-top: 20px;
+                            margin-left: 20px;
+                            color: white;
+                        }
+                    }
+                    &:hover{
+                        & .menu__main__container__bloc__plats__confirm{
+                        animation: confirm 0.7s both;
+                        }
+                        & i {
+                            animation: icone-confirm 0.7s both;
+                        }
+                    }
+                    &:not(:hover){
+                        & .menu__main__container__bloc__plats__confirm{
+                            animation: confirm-fin 0.7s both;
+                        }
+                    }
                 }
             }
         }
