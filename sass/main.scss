@@ -14,7 +14,7 @@
 
 .coeur{
     position: relative;
-    box-sizing: border-box;
+    animation: coeur-vide-retour 2s both;
     &__plein{
         font-size: 24px;
         position:absolute;
@@ -22,15 +22,21 @@
         right: 0;
         left: 0;
         bottom: 0;
-        opacity: 0;
-        color: transparent;
+        background: linear-gradient($couleur-primaire,$couleur-secondaire);
+        background-size: cover;
+        background-position: center;
+        background-clip: text;
         -webkit-background-clip: text;
-                background-clip: text;
-        background: linear-gradient(red,blue);
-
+        color: transparent;
+        opacity: 0;
+        transform-origin: bottom;
+        animation: favoris-plein-retour 2s both;
     }
-    &__plein:hover{
-        animation: favoris-plein 2s both;
+    &:hover{
+        animation: coeur-vide 2s both;
+        & .coeur__plein{
+            animation: favoris-plein 2s both;
+        }
     }
 }
 
@@ -43,6 +49,33 @@
     }
 }
 
+@keyframes favoris-plein-retour {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes coeur-vide {
+    0%{
+        color: black;
+    }
+    100%{
+        color: white;
+    }
+}
+
+@keyframes coeur-vide-retour {
+    0%{
+        color: white;
+    }
+    100%{
+        color: black;
+    }
+}
+
 #image{
     object-position: center;
 }
@@ -52,38 +85,4 @@
 #images-pages{
     width: 100%;
     object-fit:cover;
-}
-
-
-
-
-
-
-
-
-@keyframes rotation {
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes loading {
-    0%{
-        transform: scale(0.1);
-        background-color: $couleur-primaire;
-    }
-    100%{
-        background-color: $couleur-secondaire;
-        transform: scale(1);
-    }
-}
-
-@keyframes loading-vu {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        z-index: -1;
-    }
 }
