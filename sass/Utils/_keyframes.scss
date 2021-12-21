@@ -1,3 +1,4 @@
+/*== header ==*/
 @keyframes animation-retour-head {
     0%{
         transform: translateX(0);
@@ -15,6 +16,8 @@
         transform: translateX(0);
     }
 }
+
+/*== Animations Plats ==*/
 
 @keyframes confirm {
     0%{
@@ -48,5 +51,116 @@
     100%{
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/*== Animation Loader ==*/
+
+@keyframes rotation {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading {
+    0%{
+        transform: scale(0.1);
+        background-color: $couleur-primaire;
+    }
+    100%{
+        background-color: $couleur-secondaire;
+        transform: scale(1);
+    }
+}
+
+@keyframes loading-vu {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/*== Animation Boutton ==*/
+
+@keyframes Boutton {
+    0%{
+        background: linear-gradient(150deg,$couleur-secondaire,$couleur-primaire);
+    }
+    100%{
+        background: linear-gradient(150deg,lighten($couleur-secondaire,5%),lighten($couleur-primaire,5%));
+        box-shadow: 6px 6px 10px darken($couleur-ombre, 10%);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes Boutton-retour {
+    0%{
+        background: linear-gradient(150deg,lighten($couleur-secondaire,5%),lighten($couleur-primaire,5%));
+        box-shadow: 6px 6px 10px darken($couleur-ombre, 10%);
+        transform: scale(1.1);
+    }
+    100%{
+        background: linear-gradient(150deg,$couleur-secondaire,$couleur-primaire);
+        transform: scale(1);
+    }
+}
+
+/*== Animation Figure restaurant ==*/
+
+@keyframes Figure {
+    100%{
+        box-shadow: 6px 6px 10px darken($couleur-ombre, 10%);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes Figure-retour {
+    0%{
+        box-shadow: 6px 6px 10px darken($couleur-ombre, 10%);
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/*== Animation Favoris/coeur ==*/
+
+@keyframes favoris-plein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes favoris-plein-retour {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes coeur-vide {
+    0%{
+        color: black;
+    }
+    100%{
+        color: white;
+    }
+}
+
+@keyframes coeur-vide-retour {
+    0%{
+        color: white;
+    }
+    100%{
+        color: black;
     }
 }

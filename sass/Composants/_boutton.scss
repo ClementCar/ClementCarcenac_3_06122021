@@ -8,6 +8,7 @@
     @include ombrage;
     margin-top: 30px;
     padding: 5px;
+    animation: Boutton-retour 0.5s both;
     & p {
         text-align: center;
         margin: 0 auto;
@@ -15,5 +16,8 @@
     }
     &--pages{
         width: 170px;
+    }
+    &:hover{
+        animation: Boutton 0.5s both;
     }
 }

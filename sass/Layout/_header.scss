@@ -6,7 +6,6 @@
     &__img{
         width: 50%;
         margin: 0 auto;
-        margin-right:25%;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -16,6 +15,22 @@
         animation: animation-retour-fin-head 1s both;
         &:hover{
             animation: animation-retour-head 1s both;
+        }
+    }
+    @include media-ipad{
+        &__img{
+            width: 40%;
+        }
+        & i {
+            font-size: 25px;
+        }
+    }
+    @include media-ordinateur{
+        &__img{
+            width: 30%;
+        }
+        & i {
+            font-size: 30px;
         }
     }
 }

@@ -1,0 +1,27 @@
+.coeur{
+    position: relative;
+    animation: coeur-vide-retour 2s both;
+    &__plein{
+        font-size: 24px;
+        position:absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient($couleur-primaire,$couleur-secondaire);
+        background-size: cover;
+        background-position: center;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        transform-origin: bottom;
+        animation: favoris-plein-retour 2s both;
+    }
+    &:hover{
+        animation: coeur-vide 2s both;
+        & .coeur__plein{
+            animation: favoris-plein 2s both;
+        }
+    }
+}

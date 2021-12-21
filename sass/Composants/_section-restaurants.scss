@@ -23,6 +23,7 @@
             @include ombrage;
             border-radius: 20px;
             position: relative;
+            animation: Figure-retour 0.5s both;
             &__info{
                 margin-top:10px;
                 margin-left: 5%;
@@ -56,6 +57,9 @@
                 align-self: center;
                 font-size: 24px;
                 margin-right: 10%;
+            }
+            &:hover{
+                animation: Figure 0.5s both;
             }
         }
         & a {
